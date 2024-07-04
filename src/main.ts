@@ -12,7 +12,7 @@ async function bootstrap() {
     {
       transport: Transport.RMQ,
       options: {
-        urls: ['amqp://localhost:5672'],
+        urls: ['amqp://user:password@localhost:5672'],
         queue: 'users_queue',
         queueOptions: {
           durable: false,
@@ -28,7 +28,8 @@ async function bootstrap() {
     }),
   );
 
+  await app.listen();
+
   logger.log(`Users Microservice running on port: ${envs.port}`);
-  //await app.listen(envs.port);
 }
 bootstrap();

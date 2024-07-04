@@ -2,7 +2,7 @@ import { IsEmail, IsString, IsStrongPassword } from 'class-validator';
 
 export class CreateUserDto {
   @IsString()
-  name: string;
+  firstname: string;
 
   @IsString()
   lastname: string;
@@ -15,7 +15,4 @@ export class CreateUserDto {
 
   @IsStrongPassword()
   password: string;
-
-  @IsString()
-  position: string;
 }
